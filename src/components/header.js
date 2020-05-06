@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = ({ siteTitle, tags }) => {
   const classes = useStyles();
-console.log(tags);
+  console.log(tags);
   return (
     <header
       style={{
@@ -47,7 +47,7 @@ console.log(tags);
         </h1>
         <div className={classes.root}>
           {tags && tags.map(tag => (
-            <Chip key={tag} label={`#${tag}`} onClick={() => tags.addTag(tag)} />
+            <Chip key={tag} label={`#${tag}`} />
           ))}
         </div>
       </div>

@@ -6,6 +6,7 @@
  */
 
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -40,7 +41,7 @@ const Layout = ({ children }) => {
           >
             <main>{children}</main>
             <footer>
-              
+              <Link to='/copy'>COPY</Link>
             </footer>
           </div>
         </>
