@@ -46,17 +46,15 @@ const CopyPage = () => {
                                 onClick={() => tagContext.addTag(tag)} />
                         ))}
                     </div> */}
-                    {
-                        /* Logical shortcut for only displaying the 
-                           button if the copy command exists */
-                        document.queryCommandSupported('copy') &&
-                        <div>
-                            <Button fullWidth
-                                onClick={() => copyToClipboard(tagContext.tags.map(t => `#${t}`).join(' '))}
-                            >Copy</Button>
-                            {copySuccess}
-                        </div>
-                    }
+
+                    <div>
+                        <Button fullWidth
+                            onClick={() => copyToClipboard(tagContext.tags.map(t => `#${t}`).join(' '))}>
+                                Copy
+                        </Button>
+                        {copySuccess}
+                    </div>
+
                     <form noValidate autoComplete="off">
                         <TextField
                             fullWidth
