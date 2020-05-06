@@ -23,7 +23,7 @@ const Header = ({ siteTitle, tags }) => {
   return (
     <header
       style={{
-        background: `rebeccapurple`,
+        background: '#20638C',
         marginBottom: `1.45rem`,
       }}
     >
@@ -34,7 +34,7 @@ const Header = ({ siteTitle, tags }) => {
           padding: `1.45rem 1.0875rem`,
         }}
       >
-        <h1 style={{ margin: 0 }}>
+        <h2 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
@@ -44,7 +44,7 @@ const Header = ({ siteTitle, tags }) => {
           >
             {siteTitle} ({tags.length})
           </Link>
-        </h1>
+        </h2>
         <div className={classes.root}>
           {tags && tags.map(tag => (
             <Chip key={tag} label={`#${tag}`} />

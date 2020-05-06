@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import * as copy from 'clipboard-copy';
 
+
+
 import Layout from "../components/layout"
 
 const useStyles = makeStyles((theme) => ({
@@ -48,9 +50,13 @@ const CopyPage = () => {
                     </div> */}
 
                     <div>
-                        <Button fullWidth
-                            onClick={() => copyToClipboard(tagContext.tags.map(t => `#${t}`).join(' '))}>
-                                Copy
+                        <Button
+                            fullWidth
+                            onClick={() => copyToClipboard(tagContext.tags.map(t => `#${t}`).join(' '))}
+                            variant="contained" 
+                            color="primary"
+                        >
+                            Copy
                         </Button>
                         {copySuccess}
                     </div>

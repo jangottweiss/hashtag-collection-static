@@ -13,10 +13,28 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
+import { navigate } from '@reach/router';
+
+import { makeStyles } from '@material-ui/core/styles';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import HomeIcon from '@material-ui/icons/Home';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+
 import TagContext from '../components/Context/TagContext'
 
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+  },
+});
+
 const Layout = ({ children }) => {
-  // const [value, setValue] = useState([])
+  const classes = useStyles();
+  const [value, setValue] = useState([])
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +49,7 @@ const Layout = ({ children }) => {
     <TagContext.Consumer>
       {tags => (
         <>
-          <Header siteTitle={data.site.siteMetadata.title} tags={tags.tags} />          
+          <Header siteTitle={data.site.siteMetadata.title} tags={tags.tags} />
           <div
             style={{
               margin: `0 auto`,
@@ -40,8 +58,20 @@ const Layout = ({ children }) => {
             }}
           >
             <main>{children}</main>
-            <footer>
-              <Link to='/copy'>COPY</Link>
+            <footer>             
+              <BottomNavigation
+                value={value}
+                onChange={(event, newValue) => {
+                  console.log(newValue);
+                  navigate(newValue);
+                  setValue(newValue);
+                }}
+                showLabels
+                className={classes.root}
+              >
+                <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction value="copy" label="Copy" icon={<FileCopyIcon />} />                
+              </BottomNavigation>
             </footer>
           </div>
         </>
