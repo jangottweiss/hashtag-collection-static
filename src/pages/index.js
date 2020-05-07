@@ -2,6 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
+import { Link } from "gatsby"
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const IndexPage = ({
   data: {
@@ -10,11 +15,21 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => true) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => (
+      <Link key={edge.node.id} to={edge.node.frontmatter.path}>
+        <ListItem  key={edge.node.id} button>
+          <ListItemText primary={`${edge.node.frontmatter.title} (${edge.node.frontmatter.hashtags.length})`} />
+        </ListItem>
+      </Link>
+
+    ))
 
   return (
     <Layout>
-      <div>{Posts}</div>
+      <List component="nav" aria-label="main mailbox folders">
+        {Posts}
+      </List>
+
     </Layout>
   )
 

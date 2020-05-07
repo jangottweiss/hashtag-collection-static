@@ -2,7 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 import Layout from '../components/layout'
+
 
 import TagContext from '../components/Context/TagContext'
 
@@ -30,15 +32,16 @@ export default function Template(props) {
         <TagContext.Consumer>
             {tagContext => (
                 <Layout>
+                    <Button onClick={() => tagContext.addTags(frontmatter.hashtags)}>Add All Tags</Button>
                     <div className={classes.root}>
                         {frontmatter.hashtags.map(tag => (
-                            <Chip 
-                                key={tag} 
-                                label={`#${tag}`} 
+                            <Chip
+                                key={tag}
+                                label={`#${tag}`}
                                 color={tagContext.tags.includes(tag) ? 'primary' : 'default'}
                                 onClick={() => tagContext.addTag(tag)} />
                         ))}
-                    </div>                   
+                    </div>
                 </Layout>
             )}
         </TagContext.Consumer>

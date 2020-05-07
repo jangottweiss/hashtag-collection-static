@@ -6,11 +6,17 @@ const TagProvider = ({ children }) => {
 
 
     const addTag = (tag) => {
-        if (tags.includes(tag)) {                  
+        if (tags.includes(tag)) {
             setTags([...tags.filter(t => t !== tag)]);
             return;
         }
         setTags([...tags, tag]);
+    }
+
+    const addTags = (newTags) => {
+        if (Array.isArray(newTags)) {
+            setTags([...tags, ...newTags.filter(newTag => !tags.includes(newTag))]);
+        }
     }
 
 
@@ -23,6 +29,7 @@ const TagProvider = ({ children }) => {
             value={{
                 tags,
                 addTag,
+                addTags,
             }}
         >
             {children}

@@ -25,7 +25,10 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import Drawer from '@material-ui/core/Drawer';
 import Chip from '@material-ui/core/Chip';
 
+import * as copy from 'clipboard-copy';
+
 import TagContext from '../components/Context/TagContext'
+import { Button } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(0.5),
     },
   },
+  drawer: {
+    padding: theme.spacing(2),
+  }
 }));
 
 const Layout = ({ children }) => {
@@ -96,11 +102,25 @@ const Layout = ({ children }) => {
 
               </StickyFooter>
               <Drawer anchor='bottom' open={drawer} onClose={() => setDrawer(false)}>
-                <div className={classes.chips}>
-                  {tags.tags.map(tag => (
-                    <Chip key={tag} label={`#${tag}`} color='primary' onClick={() => tags.addTag(tag)} />
-                  ))}
+
+                <div className={classes.drawer}>
+                  {tags.tags.length > 0 
+                    ? <>
+                      <Button fullWidth onClick={() => copy(tags.tags.map(t => `#${t}`).join(' '))} >Copy ({tags.tags.length})</Button>
+                      <div className={classes.chips}>
+                        {tags.tags.map(tag => (
+                          <Chip key={tag} label={`#${tag}`} color='primary' onClick={() => tags.addTag(tag)} />
+                        ))}
+                      </div>
+                    </>
+                    :
+                    <>
+                    No tags selected!
+                    </>
+                  }
+                  
                 </div>
+
               </Drawer>
             </footer>
           </div>

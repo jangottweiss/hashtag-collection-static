@@ -28,8 +28,7 @@ const CopyPage = () => {
     const classes = useStyles();
 
 
-    function copyToClipboard(tags) {
-        debugger;
+    function copyToClipboard(tags) {        
         copy(tags);
     };
 
