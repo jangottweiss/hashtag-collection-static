@@ -21,21 +21,33 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import Drawer from '@material-ui/core/Drawer';
+import Chip from '@material-ui/core/Chip';
 
 import TagContext from '../components/Context/TagContext'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     position: 'fixed',
     bottom: 0,
     left: 0,
   },
-});
+  chips: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.5),
+    },
+  },
+}));
 
 const Layout = ({ children }) => {
   const classes = useStyles();
   const [value, setValue] = useState([])
+  const [drawer, setDrawer] = useState(false)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -64,17 +76,32 @@ const Layout = ({ children }) => {
                 <BottomNavigation
                   value={value}
                   onChange={(event, newValue) => {
+                    setValue(newValue);
+                    if (newValue === 'tags') {
+                      setDrawer(true);
+                      return;
+                    }
                     console.log(newValue);
                     navigate(newValue);
-                    setValue(newValue);
+
                   }}
                   showLabels
                   className={classes.root}
                 >
                   <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
                   <BottomNavigationAction value="copy" label="Copy" icon={<FileCopyIcon />} />
+                  <BottomNavigationAction value="tags" label="Tags" icon={<LocalOfferIcon />} />
+
                 </BottomNavigation>
+
               </StickyFooter>
+              <Drawer anchor='bottom' open={drawer} onClose={() => setDrawer(false)}>
+                <div className={classes.chips}>
+                  {tags.tags.map(tag => (
+                    <Chip key={tag} label={`#${tag}`} color='primary' onClick={() => tags.addTag(tag)} />
+                  ))}
+                </div>
+              </Drawer>
             </footer>
           </div>
         </>

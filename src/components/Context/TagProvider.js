@@ -6,8 +6,7 @@ const TagProvider = ({ children }) => {
 
 
     const addTag = (tag) => {
-        if (tags.includes(tag)) {      
-            debugger;      
+        if (tags.includes(tag)) {                  
             setTags([...tags.filter(t => t !== tag)]);
             return;
         }
