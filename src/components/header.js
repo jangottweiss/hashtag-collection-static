@@ -36,7 +36,7 @@ const Header = ({ siteTitle, tags }) => {
       >
         <h2 style={{ margin: 0 }}>
           <Link
-            to="/"
+            to="categories"
             style={{
               color: `white`,
               textDecoration: `none`,

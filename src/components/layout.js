@@ -21,8 +21,10 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/Home';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import Drawer from '@material-ui/core/Drawer';
+import AllInboxIcon from '@material-ui/icons/AllInbox';
 import Chip from '@material-ui/core/Chip';
 
 import * as copy from 'clipboard-copy';
@@ -94,8 +96,8 @@ const Layout = ({ children }) => {
                   showLabels
                   className={classes.root}
                 >
-                  <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
-                  <BottomNavigationAction value="copy" label="Copy" icon={<FileCopyIcon />} />
+                  <BottomNavigationAction value="/categories" label="Categories" icon={<AllInboxIcon />} />
+                  <BottomNavigationAction value="/" label="All Groups" icon={<AllInclusiveIcon />} />
                   <BottomNavigationAction value="tags" label="Tags" icon={<LocalOfferIcon />} />
 
                 </BottomNavigation>

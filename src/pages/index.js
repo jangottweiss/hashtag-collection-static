@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
+
 import { Link } from "gatsby"
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 const IndexPage = ({
@@ -29,7 +28,6 @@ const IndexPage = ({
       <List component="nav" aria-label="main mailbox folders">
         {Posts}
       </List>
-
     </Layout>
   )
 

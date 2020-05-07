@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import Layout from '../components/layout'
 // Components
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
@@ -9,8 +9,9 @@ const Tags = ({ pageContext, data }) => {
         totalCount === 1 ? "" : "s"
         } tagged with "${category}"`
     return (
-        <div>
-            <h1>{tagHeader}</h1>
+        <Layout>
+          
+          
             <ul>
                 {edges.map(({ node }) => {
                     // const { slug } = node.fields
@@ -23,7 +24,7 @@ const Tags = ({ pageContext, data }) => {
                 })}
             </ul>
 
-        </div>
+        </Layout>
     )
 }
 
