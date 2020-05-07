@@ -1,11 +1,15 @@
 const path = require(`path`)
+const _ = require("lodash")
 
 exports.createPages = async ({ actions, graphql }) => {
-    const { createPage } = actions
+  const { createPage } = actions
 
-    const result = await graphql(`
+  const tagTemplate = path.resolve("src/templates/post.js")
+  const categoryTemplate = path.resolve("src/templates/category.js")
+
+  const result = await graphql(`
     {
-      allMarkdownRemark {
+      tagRemark: allMarkdownRemark {
         edges {
           node {
             frontmatter {
@@ -14,16 +18,33 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
+      categoryGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___category) {
+          fieldValue
+        }
+      }
     }
   `)
-    if (result.errors) {
-        console.error(result.errors)
-    }
+  if (result.errors) {
+    console.error(result.errors)
+  }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: path.resolve(`src/templates/post.js`),
-        })
+  const posts = result.data.tagRemark.edges
+  posts.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: tagTemplate,
     })
+  })
+
+  const categories = result.data.categoryGroup.group
+  categories.forEach(cat => {
+    createPage({
+      path: `/category/${_.kebabCase(cat.fieldValue)}/`,
+      component: categoryTemplate,
+      context: {
+        category: cat.fieldValue,
+      },
+    })
+  })
 }

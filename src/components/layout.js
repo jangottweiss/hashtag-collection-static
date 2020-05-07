@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
                 <BottomNavigation
                   value={value}
                   onChange={(event, newValue) => {
-                    setValue(newValue);
+                    // setValue(newValue);
                     if (newValue === 'tags') {
                       setDrawer(true);
                       return;
