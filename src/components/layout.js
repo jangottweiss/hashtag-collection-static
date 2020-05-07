@@ -11,6 +11,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import StickyFooter from './sticky-footer'
 import "./layout.css"
 
 import { navigate } from '@reach/router';
@@ -58,20 +59,22 @@ const Layout = ({ children }) => {
             }}
           >
             <main>{children}</main>
-            <footer>             
-              <BottomNavigation
-                value={value}
-                onChange={(event, newValue) => {
-                  console.log(newValue);
-                  navigate(newValue);
-                  setValue(newValue);
-                }}
-                showLabels
-                className={classes.root}
-              >
-                <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
-                <BottomNavigationAction value="copy" label="Copy" icon={<FileCopyIcon />} />                
-              </BottomNavigation>
+            <footer>
+              <StickyFooter>
+                <BottomNavigation
+                  value={value}
+                  onChange={(event, newValue) => {
+                    console.log(newValue);
+                    navigate(newValue);
+                    setValue(newValue);
+                  }}
+                  showLabels
+                  className={classes.root}
+                >
+                  <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
+                  <BottomNavigationAction value="copy" label="Copy" icon={<FileCopyIcon />} />
+                </BottomNavigation>
+              </StickyFooter>
             </footer>
           </div>
         </>

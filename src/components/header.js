@@ -45,11 +45,11 @@ const Header = ({ siteTitle, tags }) => {
             {siteTitle} ({tags.length})
           </Link>
         </h2>
-        <div className={classes.root}>
+        {/* <div className={classes.root}>
           {tags && tags.map(tag => (
             <Chip key={tag} label={`#${tag}`} />
           ))}
-        </div>
+        </div> */}
       </div>
     </header>
   )
