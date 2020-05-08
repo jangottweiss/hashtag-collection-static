@@ -18,13 +18,15 @@ const useStyles = makeStyles((theme) => ({
     button: {
         marginTop: theme.spacing(0.5),
         marginBottom: theme.spacing(1.5),
-    }, 
+    },
     slider: {
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
+        marginLeft: theme.spacing(4),
+        marginRight: theme.spacing(4),
     }
 }));
-    
+
 
 export default function Template({ data }) {
     const classes = useStyles();
@@ -96,15 +98,17 @@ export default function Template({ data }) {
                     >
                         Add All Tags
                     </Button>
-                    <Slider
-                        valueLabelDisplay="auto"
-                        step={1}
-                        marks
-                        min={0}
-                        max={hashtags.length}
-                        className={classes.slider}
-                        {...bind}
-                    />
+                    <div className={classes.slider}>
+                        <Slider
+                            valueLabelDisplay="auto"
+                            step={1}
+                            marks
+                            min={0}
+                            max={hashtags.length}
+
+                            {...bind}
+                        />
+                    </div>
                     <HashtagChips
                         tags={hashtags}
                         selectedTags={tagContext.tags}
