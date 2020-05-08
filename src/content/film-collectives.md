@@ -5,6 +5,7 @@ category:
     - Film
     - Collectives
 hashtags:
+    - filmclubeurope
     - restorefrombackup
     - filmwave
     - believeinfilm
