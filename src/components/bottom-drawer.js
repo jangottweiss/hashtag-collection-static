@@ -14,6 +14,10 @@ import HashtagChips from './hashtah-chips';
 const useStyles = makeStyles((theme) => ({
     drawer: {
         padding: theme.spacing(2),
+    },
+    button: {
+        marginTop: theme.spacing(0.5),
+        marginBottom: theme.spacing(1.5),
     }
 }));
 
@@ -25,7 +29,15 @@ const BottomDrawer = ({ open, onClose }) => {
             {tagContext => (
                 <Drawer anchor='bottom' open={open} onClose={() => onClose()}>
                     <div className={classes.drawer}>
-                        <Button fullWidth onClick={() => copy(tagContext.tags.map(t => `#${t}`).join(' '))} >Copy ({tagContext.tags.length})</Button>
+                        <Button
+                            fullWidth
+                            onClick={() => copy(tagContext.tags.map(t => `#${t}`).join(' '))}
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                        >
+                            Copy {tagContext.tags.length}#
+                        </Button>
                         <HashtagChips
                             tags={tagContext.tags}
                             selectedTags={tagContext.tags}

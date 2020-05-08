@@ -13,9 +13,15 @@ const TagProvider = ({ children }) => {
         setTags([...tags, tag]);
     }
 
-    const addTags = (newTags) => {
+    const addTags = (newTags, removeExisting = false) => {
         if (Array.isArray(newTags)) {
-            setTags([...tags, ...newTags.filter(newTag => !tags.includes(newTag))]);
+            if(removeExisting) {
+                const toRemove = newTags.filter(newTag => tags.includes(newTag));
+                setTags([...tags, ...newTags.filter(newTag => !tags.includes(newTag))]);
+                setTags([...tags.filter(t => !toRemove.includes(t))]);
+                return;
+            }
+            setTags([...tags, ...newTags.filter(newTag => !tags.includes(newTag))]);                                
         }
     }
 
