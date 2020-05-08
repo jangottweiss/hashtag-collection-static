@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 // Components
-import Layout from "../components/layout" 
+import Layout from "../components/layout"
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -20,19 +20,19 @@ const CategoryPage = ({
   const Cats = group
     .map(tag => (
       <Link key={tag.fieldValue} to={`/category/${kebabCase(tag.fieldValue)}/`}>
-      <ListItem button>
-        <ListItemText primary={`${tag.fieldValue} (${tag.totalCount})`} />
-      </ListItem>
+        <ListItem button>
+          <ListItemText primary={`${tag.fieldValue} (${tag.totalCount})`} />
+        </ListItem>
       </Link >
     ))
 
-return (
-  <Layout>
-    <List component="nav" aria-label="main mailbox folders">
-      {Cats}
-    </List>
-  </Layout>
-)
+  return (
+    <Layout>
+      <List component="nav" aria-label="main mailbox folders">
+        {Cats}
+      </List>
+    </Layout>
+  )
 
 }
 export default CategoryPage

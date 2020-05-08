@@ -1,64 +1,32 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { makeStyles } from '@material-ui/core/styles';
-import Chip from '@material-ui/core/Chip';
+import React from "react";
+import { graphql } from "gatsby";
+
+// MD Components
 import Button from '@material-ui/core/Button';
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
-
-import TagContext from '../components/Context/TagContext'
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        '& > *': {
-            margin: theme.spacing(0.5),
-        },
-    },
-}));
+// Components
+import TagContext from '../components/Context/TagContext';
+import HashtagChips from '../components/hashtah-chips';
 
 export default function Template(props) {
-    const data = props.data;
-    const pageContext = props.pageContext;
-    const classes = useStyles();
+    const data = props.data;        
     const { markdownRemark } = data // data.markdownRemark holds your post data
     const { frontmatter } = markdownRemark
-
-    console.log(pageContext);
 
     return (
         <TagContext.Consumer>
             {tagContext => (
                 <Layout>
                     <Button onClick={() => tagContext.addTags(frontmatter.hashtags)}>Add All Tags</Button>
-                    <div className={classes.root}>
-                        {frontmatter.hashtags.map(tag => (
-                            <Chip
-                                key={tag}
-                                label={`#${tag}`}
-                                color={tagContext.tags.includes(tag) ? 'primary' : 'default'}
-                                onClick={() => tagContext.addTag(tag)} />
-                        ))}
-                    </div>
+                    <HashtagChips
+                        tags={frontmatter.hashtags}
+                        selectedTags={tagContext.tags}
+                        onClick={(tag) => tagContext.addTag(tag)} />
                 </Layout>
             )}
         </TagContext.Consumer>
     )
-    // return (
-
-    //     // <div className="blog-post">
-    //         {/* <h1>{frontmatter.title} ({frontmatter.hashtags.length})</h1>            
-    //         {frontmatter.hashtags.map((tag) =>
-    //             <Button variant="contained" color="primary">#{tag}</Button>
-    //         )} */}
-    //         {/* <div
-    //             className="blog-post-content"
-    //             dangerouslySetInnerHTML={{ __html: html }}
-    //         /> */}
-    //     {/* </div> */}
-    // )
 }
 
 export const pageQuery = graphql`

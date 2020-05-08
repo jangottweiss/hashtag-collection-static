@@ -11,26 +11,20 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import StickyFooter from './sticky-footer'
+
 import "./layout.css"
 
 import { navigate } from '@reach/router';
 
 import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import HomeIcon from '@material-ui/icons/Home';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import Drawer from '@material-ui/core/Drawer';
-import AllInboxIcon from '@material-ui/icons/AllInbox';
-import Chip from '@material-ui/core/Chip';
 
-import * as copy from 'clipboard-copy';
 
 import TagContext from '../components/Context/TagContext'
-import { Button } from "@material-ui/core"
+
+
+// Components
+import Footer from './footer';
+import BottomDrawer from './bottom-drawer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,9 +62,9 @@ const Layout = ({ children }) => {
 
   return (
     <TagContext.Consumer>
-      {tags => (
+      {tagContext => (
         <>
-          <Header siteTitle={data.site.siteMetadata.title} tags={tags.tags} />
+          <Header siteTitle={data.site.siteMetadata.title} tags={tagContext.tags} />
           <div
             style={{
               margin: `0 auto`,
@@ -80,50 +74,23 @@ const Layout = ({ children }) => {
           >
             <main>{children}</main>
             <footer>
-              <StickyFooter>
-                <BottomNavigation
-                  value={value}
-                  onChange={(event, newValue) => {
-                    // setValue(newValue);
-                    if (newValue === 'tags') {
-                      setDrawer(true);
-                      return;
-                    }
-                    console.log(newValue);
-                    navigate(newValue);
-
-                  }}
-                  showLabels
-                  className={classes.root}
-                >
-                  <BottomNavigationAction value="/categories" label="Categories" icon={<AllInboxIcon />} />
-                  <BottomNavigationAction value="/" label="All Groups" icon={<AllInclusiveIcon />} />
-                  <BottomNavigationAction value="tags" label="Tags" icon={<LocalOfferIcon />} />
-
-                </BottomNavigation>
-
-              </StickyFooter>
-              <Drawer anchor='bottom' open={drawer} onClose={() => setDrawer(false)}>
-
-                <div className={classes.drawer}>
-                  {tags.tags.length > 0 
-                    ? <>
-                      <Button fullWidth onClick={() => copy(tags.tags.map(t => `#${t}`).join(' '))} >Copy ({tags.tags.length})</Button>
-                      <div className={classes.chips}>
-                        {tags.tags.map(tag => (
-                          <Chip key={tag} label={`#${tag}`} color='primary' onClick={() => tags.addTag(tag)} />
-                        ))}
-                      </div>
-                    </>
-                    :
-                    <>
-                    No tags selected!
-                    </>
+              <Footer
+                onChange={(item) => {
+                  console.log(item)
+                  if (item[0] === '/') {
+                    navigate(item);
+                    return;
+                  } 
+                  if(item === 'tags') {
+                    setDrawer(true);
                   }
-                  
-                </div>
+                }}
+              />
+              <BottomDrawer 
+                open={drawer}
+                onClose={() => setDrawer(false)}
+              />
 
-              </Drawer>
             </footer>
           </div>
         </>
