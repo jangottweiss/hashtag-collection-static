@@ -33,7 +33,7 @@ const BottomDrawer = ({ open, onClose }) => {
                             fullWidth
                             onClick={() => copy(tagContext.tags.map(t => `#${t}`).join(' '))}
                             variant="contained"
-                            color="primary"
+                            color={tagContext.tags.length <= 30 ? 'primary' : 'secondary'}
                             className={classes.button}
                         >
                             Copy {tagContext.tags.length}#

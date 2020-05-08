@@ -61,7 +61,7 @@ export default function Template({ data }) {
     const handleRandomSelect = (newNo) => {
         const noSelectedTags = tagContext.tags.length;
         const noDiff = newNo - noSelectedTags;
-
+        console.log(noDiff)
         let changes = [];
         if (noDiff === 0) {
             return;
@@ -83,8 +83,9 @@ export default function Template({ data }) {
     }
 
     useEffect(() => {
+        console.log('Slider Changed Debounced');
         handleRandomSelect(debouncedSliderVal);
-    }, [debouncedSliderVal, handleRandomSelect]);
+    }, [debouncedSliderVal]);
 
     return (
         <TagContext.Consumer>
