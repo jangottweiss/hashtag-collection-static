@@ -84,7 +84,7 @@ export default function Template({ data }) {
 
     useEffect(() => {
         handleRandomSelect(debouncedSliderVal);
-    }, [debouncedSliderVal]);
+    }, [debouncedSliderVal, handleRandomSelect]);
 
     return (
         <TagContext.Consumer>
