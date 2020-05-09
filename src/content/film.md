@@ -6,7 +6,9 @@ category:
 hashtags:
     - filmcommunity
     - back2thebase
+    - filmfeed
     - filmforever
+    - nograinnoglory
     - filmphotography
     - filmisnotdead
     - filmisalive
@@ -18,4 +20,8 @@ hashtags:
     - staybrokeshootfilm
     - buyfilmnotmegapixels
     - sharefilm
+    - colorfilm
+    - filmneverdie    
+    - ishootfilm
+    - homedeveloped
 ---

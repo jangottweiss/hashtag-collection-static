@@ -9,4 +9,6 @@ hashtags:
     - 35mm
     - the35mmdiary    
     - 35mmfilmphotography
+    - 35mmfilmphoto
+    - 35fuckingmillimeter
 ---
