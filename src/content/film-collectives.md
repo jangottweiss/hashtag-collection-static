@@ -9,6 +9,7 @@ hashtags:
     - filmclubeurope
     - restorefrombackup
     - filmwave
+    - boxspeedfeature
     - believeinfilm
     - negativelabpro
     - darkroomlosers
