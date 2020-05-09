@@ -6,4 +6,5 @@ category:
 hashtags:
     - heylomography
     - lomo
+    - lomography
 ---
