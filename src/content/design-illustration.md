@@ -7,8 +7,7 @@ hashtags:
     - illustragram
     - illustrationartist
     - illustration
-    - illustrators
-    - illustragram
+    - illustrators    
     - weloveillustration
     - illustrationdaily
     - contemporaryillustration

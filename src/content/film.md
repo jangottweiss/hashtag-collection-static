@@ -5,6 +5,8 @@ category:
     - Film
 hashtags:
     - filmcommunity
+    - back2thebase
+    - filmforever
     - filmphotography
     - filmisnotdead
     - filmisalive

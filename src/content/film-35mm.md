@@ -8,4 +8,5 @@ hashtags:
     - thedaily35mm
     - 35mm
     - the35mmdiary    
+    - 35mmfilmphotography
 ---

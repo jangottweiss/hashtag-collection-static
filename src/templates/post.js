@@ -36,12 +36,12 @@ export default function Template({ data }) {
     const { frontmatter } = markdownRemark
     const { hashtags } = frontmatter;
 
-    const { value, bind, setValue } = useSliderInput(hashtags.length - (hashtags.length - tagContext.tags.length));
+    const { value, bind, setValue } = useSliderInput(hashtags.length - (hashtags.length - tagContext.tags.filter((t) => hashtags.includes(t)).length));
     const debouncedSliderVal = useDebounce(value, 350);
 
     useEffect(() => {
         console.log('NEW');
-        setValue(hashtags.length - (hashtags.length - tagContext.tags.length));
+        setValue(hashtags.length - (hashtags.length - tagContext.tags.filter((t) => hashtags.includes(t)).length));
     }, [tagContext.tags, hashtags, setValue])
 
     const getRandomElements = (arr, n) => {
@@ -59,7 +59,7 @@ export default function Template({ data }) {
     }
 
     const handleRandomSelect = (newNo) => {
-        const noSelectedTags = tagContext.tags.length;
+        const noSelectedTags = tagContext.tags.filter((t) => hashtags.includes(t)).length;
         const noDiff = newNo - noSelectedTags;
         console.log(noDiff)
         let changes = [];
@@ -73,7 +73,7 @@ export default function Template({ data }) {
             tagContext.addTags(changes);
         } else if (noDiff < 0) {
             changes = getRandomElements(
-                tagContext.tags,
+                tagContext.tags.filter((t) => hashtags.includes(t)),
                 Math.abs(noDiff),
             )
 
