@@ -7,4 +7,6 @@ hashtags:
     - heylomography
     - lomo
     - lomography
+    - lomochrome 
+    - lomochromepurple
 ---
