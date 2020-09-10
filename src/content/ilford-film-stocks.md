@@ -10,7 +10,5 @@ hashtags:
     - ilforddelta100
     - ilfordhp5
     - ilfordfp4
-    - blackandwhitefilm
-    - bnwfilm
-    - blackandwhitefilmphotography
+    - ilfordxp2
 ---
