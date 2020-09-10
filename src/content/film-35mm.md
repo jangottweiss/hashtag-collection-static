@@ -1,14 +1,14 @@
 ---
-title: B&W Film
-path: /film-bnw
+title: Film 35mm
+path: /film-35mm
 category: 
     - Film
 hashtags:
-    - silvervisionfilm
-    - BNWfilm
-    - BWfilm
-    - bnwmagazine 
-    - bnw_fanatics
-    - bnw
-    - blackandwhitephotography
+    - 35mmfilm
+    - thedaily35mm
+    - 35mm
+    - the35mmdiary    
+    - 35mmfilmphotography
+    - 35mmfilmphoto
+    - 35fuckingmillimeter
 ---
