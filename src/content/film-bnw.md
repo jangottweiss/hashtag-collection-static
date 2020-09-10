@@ -11,4 +11,7 @@ hashtags:
     - bnw_fanatics
     - bnw
     - blackandwhitephotography
+    - blackandwhitefilm
+    - bnwfilm
+    - blackandwhitefilmphotography
 ---
