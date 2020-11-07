@@ -26,4 +26,7 @@ hashtags:
     - shotfilm
     - filmfriday
     - filmdeveloping
+    - 35mmphotograph
+    - bestoftheroll
+    - 35mmanalog
 ---

@@ -17,4 +17,6 @@ hashtags:
     - analogdrive
     - filmcamerainternational
     - boxofgrain
+    - daily35mm
+    - analogphotographyclub
 ---
