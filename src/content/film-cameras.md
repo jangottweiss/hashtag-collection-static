@@ -9,4 +9,9 @@ hashtags:
     - pentax
     - nikonem
     - nikon
+    - rolleicord
+    - nikonfe
+    - nikonfm
+    - mamiyac330
+    - mamiya
 ---
