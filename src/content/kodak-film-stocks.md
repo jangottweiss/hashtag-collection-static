@@ -22,6 +22,10 @@ hashtags:
     - kodakgold
     - kodakgold200
     - kodak200
+    - gold200
     - kodakproimage100
     - kodakcolor
+    - kodakektar100
+    - trix400
+    - ektar100
 ---
