@@ -24,4 +24,6 @@ hashtags:
     - filmneverdie    
     - ishootfilm
     - homedeveloped
+    - developandfix
+    - redditanalog
 ---
