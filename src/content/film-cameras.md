@@ -7,11 +7,14 @@ hashtags:
     - filmcamera
     - pentaxmesuper    
     - pentax
-    - nikonem
     - nikon
-    - rolleicord
     - nikonfe
     - nikonfm
+    - nikonem
+    - nikonf65
+    - nikonf80
     - mamiyac330
     - mamiya
+    - rolleicord
+    - rolleicordv
 ---
