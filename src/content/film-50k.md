@@ -10,8 +10,6 @@ hashtags:
     - 35mmfilms
     - analogphotos
     - homedevelopedfilm
-    - rfb1k
-    - filmclubeurope
     - negativelabpro
     - onfilmphoto
     - onfilmdiary
