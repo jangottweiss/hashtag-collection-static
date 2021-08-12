@@ -5,8 +5,6 @@ category:
     - Film
     - Collectives
 hashtags:
-    - rfb1k
-    - filmclubeurope
     - restorefrombackup
     - filmwave
     - boxspeedfeature
