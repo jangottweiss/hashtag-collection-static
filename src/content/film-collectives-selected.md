@@ -5,9 +5,7 @@ category:
     - Film
     - Collectives
 hashtags:
-    - rfb1k    
     - restorefrombackup    
-    - filmclubeurope
     - somewheremagazine
     - filmwave
     - nowherediary
