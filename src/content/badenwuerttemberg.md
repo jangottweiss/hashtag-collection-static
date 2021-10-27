@@ -7,4 +7,8 @@ hashtags:
     - bawü 
     - visitbawü
     - visitbawu
+    - wirsindsüden
+    - thesunnysideofgermany
+    - badenwürttemberg
+    - heimatliebe
 ---
