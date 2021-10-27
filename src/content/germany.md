@@ -12,4 +12,13 @@ hashtags:
     - germanytravel
     - deutschlandkarte
     - ig_deutschland
+    - weroamgermany
+    - meindeutschland
+    - urlaubindeutschland
+    - igersgermany
+    - entdeckedeutschland
+    - heimatliebe
+    - deutschlandviews
+    - germanyexplorer
+    - visitgermantowns
 ---
