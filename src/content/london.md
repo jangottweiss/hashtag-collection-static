@@ -12,5 +12,22 @@ hashtags:
     - londoncity
     - lovegreatbritain
     - lovelondon
+    - londonist
+    - londoncitylife
+    - londonlove
+    - thisislondon
+    - visitlondon
+    - mysecretlondon
+    - londontravel
+    - londoncalling
+    - igerslondon
+    - toplondonphotos
+    - londoners
+    - londonbylondoners
+    - lifeinlondon
+    - wheninlondon
+    - timeoutlondon
+    - instalondon
+    - iwalkedthisstreet
 ---
 
