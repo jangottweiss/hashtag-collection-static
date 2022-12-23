@@ -5,4 +5,13 @@ category:
     - Film
 hashtags:
     - afilmcosmos
+    - loadfilm
+    - shootfilmdrinkbeer
+    - filmphotography
+    - staybrokeshootfilm
+    - drivebyfilm
+    - onfilm
+    - analoguevibes
+    - moderndayanalogue
+    - thefilmrenaissance
 ---
