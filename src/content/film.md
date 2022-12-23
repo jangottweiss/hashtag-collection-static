@@ -26,4 +26,24 @@ hashtags:
     - homedeveloped
     - developandfix
     - redditanalog
+    - restorefrombackup       
+    - rfbpretty
+    - thefilmgang
+    - c41
+    - analogvibes
+    - boxspeedfeature
+    - theanalogclub
+    - filmfeed
+    - everybodyfilm
+    - filmforever
+    - theanalogueproject
+    - analogphotography
+    - 35mmfilm
+    - filmsnotdead
+    - filmphotography
+    - filmwave
+    - drivebyfilm
+    - grainisgood
+    - ibelieveinfilm
+    - thefilmstead  
 ---
