@@ -5,6 +5,7 @@ category:
     - UK   
 hashtags:
     - britain
+    - uk_shooters
     - europe
     - igerslondon
     - london
