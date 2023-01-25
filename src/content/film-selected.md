@@ -14,4 +14,5 @@ hashtags:
     - analoguevibes
     - moderndayanalogue
     - thefilmrenaissance
+    - stademagazine
 ---
