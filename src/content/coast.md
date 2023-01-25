@@ -5,6 +5,7 @@ category:
     - Photography
 hashtags:
     - lighthouse
+    - thecoastdispatch
     - coast
     - cliffs
     - greatoutdoors
