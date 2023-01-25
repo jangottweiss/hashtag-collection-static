@@ -5,7 +5,6 @@ category:
     - Film
     - Collectives
 hashtags:
-    - restorefrombackup    
     - somewheremagazine
     - filmwave
     - nowherediary
