@@ -13,4 +13,9 @@ hashtags:
     - wandern
     - hikingadventures
     - hiking
+    - hikingtheglobe
+    - hikemore
+    - stayandwander
+    - getoutside
+    - hikingculture
 ---
